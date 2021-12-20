@@ -1,0 +1,114 @@
+.card-add {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__number,
+  &__type,
+  &__description {
+    width: 300px;
+    height: 30px;
+    margin-right: 6px;
+    padding: 0 8px;
+    border: solid black 1px;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 10px;
+  }
+  &__description {
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    white-space: nowrap;
+  }
+
+  &__number::-webkit-outer-spin-button,
+  &__number::-webkit-inner-spin-button {
+    display: none;
+  }
+  &__btn-add {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.cards {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.card {
+  height: 180px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid black 1px;
+  border-radius: 15px;
+  transition: all 0.3s;
+  object-fit: cover;
+  background-repeat: round;
+  position: relative;
+  &__type {
+    position: absolute;
+  }
+  &__description {
+    transform: translate(0px, -80%);
+    transition: all 0.8s;
+    opacity: 0;
+  }
+  &__number {
+    position: absolute;
+    top: 140px;
+  }
+  &:hover {
+    border-color: white;
+    box-shadow: 5px 10px 15px black;
+    & > .card__type,
+    .card__number {
+      color: white;
+    }
+    & > .card__button {
+      opacity: 1;
+      transition: all 0.8s;
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+        transform: rotate(10deg) scale(1.5);
+      }
+    }
+  }
+  &__button {
+    color: red;
+    font-size: 20px;
+    opacity: 0;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  &__img {
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+  }
+  &__info {
+    margin-bottom: 15px;
+    &:hover {
+      & > .card__description {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.visa {
+  background-image: url('../images/bg_visa.jpg');
+}
+.mastercard {
+  background-image: url('../images/bg_mastercard.jpg');
+}

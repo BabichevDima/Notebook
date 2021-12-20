@@ -1,0 +1,22 @@
+.header-container,
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  background: black;
+}
+
+.header__link,
+.footer__info {
+  color: #bbbaba;
+}
+
+.header__link {
+  margin: 0 20px;
+  transition: all 0.2s;
+  &:hover,
+  &.active {
+    color: white;
+  }
+}
